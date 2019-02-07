@@ -1,0 +1,66 @@
+@import "../utils";
+
+.container {
+  @include fillParentIfHisPositionRelative();
+  @include flexColumnAlignCenter();
+  justify-content: center;
+  animation: show 1s;
+  animation-direction: alternate;
+}
+
+.game {
+  @include setFixedSize(800px, 800px);
+  @include setPanelSkin();
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  &-controls {
+    @include setFixedSize(60px, 800px);
+    @include setPanelSkin();
+    @include flexRowAlignCenter();
+    justify-content: space-around;
+    margin: 10px;
+  }
+
+  &-text {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  &-number {
+    color: #7eb971;
+  }
+
+  &-btn-play {
+    width: 100px;
+    height: 40px;
+    @include btn_ok();
+    @include flexRowAlignCenter();
+    justify-content: center;
+  }
+
+  &-input {
+    width: 100px;
+    height: 40px;
+    background: #292929;
+    @include field-template();
+    @include flexRowAlignCenter();
+    text-align: center;
+    justify-content: center;
+    &:focus{
+      outline: none !important;
+    }
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

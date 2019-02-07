@@ -1,0 +1,44 @@
+@import "../utils";
+.container {
+  @include fillParentIfHisPositionRelative();
+  @include flexRowAlignCenter();
+  justify-content: center;
+  z-index: 10;
+}
+
+.popup {
+  @include setFixedSize(200px, 400px);
+  @include setPanelSkin();
+  @include flexColumnAlignCenter();
+  justify-content: center;
+  animation: show 1s;
+  animation-direction: alternate;
+
+  &-text {
+    font-size: 28px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 5px;
+  }
+
+  &-number {
+    color: #7eb971;
+  }
+
+  &-btn-play {
+    width: 200px;
+    height: 60px;
+    @include btn_ok();
+    @include flexRowAlignCenter();
+    justify-content: center;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

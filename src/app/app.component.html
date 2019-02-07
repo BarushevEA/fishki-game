@@ -1,0 +1,7 @@
+<div class="container">
+  <app-result-popup *ngIf="gameService.isResultShow"></app-result-popup>
+  <app-background></app-background>
+  <app-welcome-page *ngIf="gameService.currentPage == gameService.pageType.WELCOME"></app-welcome-page>
+  <app-game-page *ngIf="gameService.currentPage == gameService.pageType.GAME"></app-game-page>
+</div>
+

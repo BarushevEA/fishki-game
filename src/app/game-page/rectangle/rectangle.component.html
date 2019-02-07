@@ -1,0 +1,6 @@
+<div class="rectangle"
+     [class.rectangle--red]="currentState == state.RED"
+     [class.rectangle--blue]="currentState == state.BLUE"
+     [class.rectangle--green]="currentState == state.GREEN"
+     [class.rectangle--yellow]="currentState == state.YELLOW"
+     (click)="playerClick()"></div>

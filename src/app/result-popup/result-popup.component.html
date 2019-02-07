@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="popup">
+    <div class="popup-text">
+      Player : <span class="popup-number">{{gameService.playerCounts}}</span>
+    </div>
+    <div class="popup-text">
+      Computer : <span class="popup-number">{{gameService.computerCounts}}</span>
+    </div>
+    <div class="popup-btn-play popup-text" (click)="gameService.start()">Play</div>
+  </div>
+</div>

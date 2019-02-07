@@ -1,0 +1,20 @@
+@import "../utils";
+
+.gradient-bg {
+  @include fillParentIfHisPositionRelative();
+  background: linear-gradient(-45deg, #000000, #494949, #000000, #292929, #000000, #000000, #000000);
+  background-size: 400% 400%;
+  animation: Gradient 15s ease infinite;
+  z-index: -1;
+}
+@keyframes Gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}

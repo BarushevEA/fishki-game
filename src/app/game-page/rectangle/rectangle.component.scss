@@ -1,0 +1,72 @@
+@import "../../utils";
+
+.rectangle {
+  @include setFixedSize(70px, 70px);
+  border: #333333 1px solid;
+  border-radius: 10px;
+  margin: 4px;
+  box-shadow: 2px 2px 0 #737373;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &--red {
+    animation: yellow-red 0.2s;
+    animation-direction: alternate;
+    background: #ff6d6d;
+  }
+
+  &--green {
+    animation: yellow-green 0.2s;
+    animation-direction: alternate;
+    background: #3c803f;
+  }
+
+  &--blue {
+    animation: black-blue 1s;
+    animation-direction: alternate;
+    background: #4c50ff;
+  }
+
+  &--yellow {
+    background: #faff90;
+  }
+}
+
+@keyframes yellow-red {
+  0% {
+    background: #faff90;
+  }
+  100% {
+    //transform: translate(0, 0);
+    background: #ff6d6d;
+  }
+}
+
+@keyframes yellow-green {
+  0% {
+    background: #faff90;
+  }
+  100% {
+    //transform: translate(0, 0);
+    background: #3c803f;
+  }
+}
+
+@keyframes black-blue {
+  0% {
+    background: none;
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.5, 0.5);
+  }
+  100% {
+    //transform: translate(0, 0);
+    background: #4c50ff;
+    transform: scale(1, 1);
+  }
+}
+

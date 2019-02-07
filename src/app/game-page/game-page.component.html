@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="game-controls">
+    <div class="game-btn-play game-text" (click)="play()">Play</div>
+    <input id="gameDelay" type="text" class="game-input game-text" value="{{gameService.delay}}">
+    <div class="game-text">
+      Player : <span class="game-number">{{gameService.playerCounts}}</span>
+    </div>
+    <div class="game-text">
+      Computer : <span class="game-number">{{gameService.computerCounts}}</span>
+    </div>
+  </div>
+  <div class="game">
+    <app-rectangle *ngFor="let rectangle of rectangles"></app-rectangle>
+  </div>
+</div>
