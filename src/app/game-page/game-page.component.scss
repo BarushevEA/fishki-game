@@ -9,7 +9,7 @@
 }
 
 .game {
-  @include setFixedSize(800px, 800px);
+  @include setFixedSize(540px, 840px);
   @include setPanelSkin();
   display: flex;
   flex-flow: row wrap;
