@@ -1,5 +1,5 @@
 import {ChangeDetectorRef, Injectable} from '@angular/core';
-import {RectangleComponent} from "./game-page/rectangle/rectangle.component";
+import {RectangleComponent} from './game-page/rectangle/rectangle.component';
 
 @Injectable({
   providedIn: 'root'
@@ -37,20 +37,12 @@ export class GameService {
     this.computerCounts = 0;
     this.activeRectangle = 0;
     this.isResultShow = false;
-    setTimeout(() => {
-      this.showWelcome();
-    }, 1000);
-    setTimeout(() => {
-      this.clearPage();
-    }, 10000);
+
+    this.showWelcome();
+
     setTimeout(() => {
       this.showGame();
-    }, 11000);
-  }
-
-  private clearPage() {
-    this.currentPage = null;
-    this.appCdr.detectChanges();
+    }, 9000);
   }
 
   private showWelcome() {
@@ -89,25 +81,25 @@ export class GameService {
   goFreeRectangle() {
     let index = -1;
     while (index === -1) {
-      let count = Math.round(Math.random() * 101);
+      const count = Math.round(Math.random() * 101);
       if (this.rectangles[count].currentState === this.rectangles[count].state.BLUE) {
-        index = count
+        index = count;
       }
-      const rectangle = this.rectangles[index];
-      const go = () => {
-        rectangle.go();
-        const computerStep = () => {
-          if (rectangle.currentState == rectangle.state.YELLOW) {
-            this.incrementComputerCounts();
-            rectangle.currentState = rectangle.state.RED;
-            rectangle.CDR.detectChanges();
-          }
-        };
-        setTimeout(computerStep.bind(this), this.delay);
-      };
-      setTimeout(go.bind(this), this.speedDelay);
-      this.gameCdr.detectChanges();
     }
+    const rectangle = this.rectangles[index];
+    const go = () => {
+      rectangle.go();
+      const computerStep = () => {
+        if (rectangle.currentState === rectangle.state.YELLOW) {
+          this.incrementComputerCounts();
+          rectangle.currentState = rectangle.state.RED;
+          rectangle.CDR.detectChanges();
+        }
+      };
+      setTimeout(computerStep.bind(this), this.delay);
+    };
+    setTimeout(go.bind(this), this.speedDelay);
+    this.gameCdr.detectChanges();
   }
 
   gameLoop() {
