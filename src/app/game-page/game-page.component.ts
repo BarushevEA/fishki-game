@@ -26,7 +26,7 @@ export class GamePageComponent implements OnInit {
       const element = document.getElementById('gameDelay');
       // @ts-ignore
       const num = parseInt(element.value, 10);
-      if (typeof (num) !== 'number' || !num) {
+      if (typeof (num) !== 'number' || !num || num < 1) {
         alert('Not a Number');
       } else {
         this.gameService.delay = num;
