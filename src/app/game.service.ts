@@ -82,7 +82,7 @@ export class GameService {
     let index = -1;
     while (index === -1) {
       const count = Math.round(Math.random() * 101);
-      if (this.rectangles[count].currentState === this.rectangles[count].state.BLUE) {
+      if (this.rectangles[count] && this.rectangles[count].currentState === this.rectangles[count].state.BLUE) {
         index = count;
       }
     }

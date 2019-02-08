@@ -1,5 +1,5 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {GameService} from "../game.service";
+import {GameService} from '../game.service';
 
 @Component({
   selector: 'app-game-page',
@@ -17,7 +17,7 @@ export class GamePageComponent implements OnInit {
 
   ngOnInit() {
     for (let i = 0; i < this.gameService.countOfRectangles; i++) {
-      this.rectangles.push(null)
+      this.rectangles.push(null);
     }
   }
 
@@ -25,8 +25,8 @@ export class GamePageComponent implements OnInit {
     if (!this.isPlayed) {
       const element = document.getElementById('gameDelay');
       // @ts-ignore
-      const num = parseInt(element.value);
-      if (typeof(num) != 'number' || !num) {
+      const num = parseInt(element.value, 10);
+      if (typeof (num) !== 'number' || !num) {
         alert('Not a Number');
       } else {
         this.gameService.delay = num;
