@@ -1,6 +1,5 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {GameService} from '../game.service';
-import {RectangleComponent} from './rectangle/rectangle.component';
 
 @Component({
   selector: 'app-game-page',
