@@ -1,5 +1,6 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {GameService} from '../game.service';
+import {RectangleComponent} from './rectangle/rectangle.component';
 
 @Component({
   selector: 'app-game-page',
@@ -7,7 +8,6 @@ import {GameService} from '../game.service';
   styleUrls: ['./game-page.component.scss']
 })
 export class GamePageComponent implements OnInit {
-  rectangles = [];
   isPlayed = false;
 
   constructor(public CDR: ChangeDetectorRef,
@@ -16,9 +16,14 @@ export class GamePageComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  initRectangles() {
+    const rectangles = [];
     for (let i = 0; i < this.gameService.countOfRectangles; i++) {
-      this.rectangles.push(null);
+      rectangles.push('');
     }
+    return rectangles;
   }
 
   play(delay) {

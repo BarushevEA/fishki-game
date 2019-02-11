@@ -25,7 +25,7 @@ export class RectangleComponent implements OnInit {
   }
 
   playerClick() {
-    if (this.currentState == STATE.YELLOW) {
+    if (this.currentState === STATE.YELLOW) {
       this.gameService.incrementPlayerCounts();
       this.currentState = STATE.GREEN;
       this.CDR.detectChanges();
