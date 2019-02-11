@@ -17,7 +17,7 @@ export class GamePageComponent implements OnInit {
   ngOnInit() {
   }
 
-  initRectangles() {
+  initRectanglesArray() {
     const rectangles = [];
     for (let i = 0; i < this.gameService.countOfRectangles; i++) {
       rectangles.push('');
