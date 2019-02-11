@@ -21,13 +21,11 @@ export class GamePageComponent implements OnInit {
     }
   }
 
-  play() {
+  play(delay) {
     if (!this.isPlayed) {
-      const element = document.getElementById('gameDelay');
-      // @ts-ignore
-      const num = parseInt(element.value, 10);
+      const num = parseInt(delay, 10);
       if (typeof (num) !== 'number' || !num || num < 1) {
-        alert('Not a Number');
+        alert('Not a valid');
       } else {
         this.gameService.delay = num;
         this.gameService.gameLoop();

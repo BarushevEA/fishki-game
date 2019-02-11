@@ -1,7 +1,7 @@
 <div class="container">
   <div class="game-controls">
-    <div class="game-btn-play game-text" (click)="play()">Play</div>
-    <input id="gameDelay" type="text" class="game-input game-text" value="{{gameService.delay}}">
+    <div class="game-btn-play game-text" (click)="play(gameDelay.value)">Play</div>
+    <input #gameDelay type="number" class="game-input game-text" value="{{gameService.delay}}">
     <div class="game-text">
       Player : <span class="game-number">{{gameService.playerCounts}}</span>
     </div>
