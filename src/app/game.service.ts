@@ -9,7 +9,6 @@ export class GameService {
   currentPage: PAGES;
   public appName = 'Fishki';
   appCdr: ChangeDetectorRef;
-  gameCdr: ChangeDetectorRef;
   rectangles: RectangleComponent[];
   delay = 1000;
   speedDelay = 500;
