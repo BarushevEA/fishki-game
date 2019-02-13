@@ -1,4 +1,4 @@
-$fontSize: 20rem;
+$fontSize: 15rem;
 
 
 .container {
@@ -9,7 +9,7 @@ $fontSize: 20rem;
   justify-content: center;
   align-items: center;
   perspective: 500px;
-  animation: show 9s;
+  animation: show 8s;
   animation-direction: alternate;
   opacity: 0;
 }

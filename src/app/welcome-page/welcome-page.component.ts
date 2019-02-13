@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {GameService} from "../game.service";
+import {GameService} from '../game.service';
 
 @Component({
   selector: 'app-welcome-page',
@@ -8,14 +8,20 @@ import {GameService} from "../game.service";
 })
 export class WelcomePageComponent implements OnInit {
 
-  layers = [];
 
   constructor(public gameService: GameService) {
   }
 
   ngOnInit() {
+  }
+
+  getNumberOfLayers() {
+    const layers = [];
+
     for (let i = 0; i < 9; i++) {
-      this.layers.push('')
+      layers.push(i);
     }
+
+    return layers;
   }
 }
