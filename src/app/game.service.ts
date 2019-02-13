@@ -18,6 +18,7 @@ export class GameService {
   activeRectangle;
   winCount = 10;
   isResultShow;
+  isGameStarted;
 
   constructor() {
   }
@@ -32,21 +33,24 @@ export class GameService {
     this.computerCounts = 0;
     this.activeRectangle = 0;
     this.isResultShow = false;
+    this.isGameStarted = false;
 
     this.showWelcome();
 
     setTimeout(() => {
-      this.showGame();
+      if (!this.isGameStarted) {
+        this.showGame();
+      }
     }, 9000);
+  }
+
+  showGame() {
+    this.currentPage = PAGES.GAME;
+    this.appCdr.detectChanges();
   }
 
   private showWelcome() {
     this.currentPage = PAGES.WELCOME;
-    this.appCdr.detectChanges();
-  }
-
-  private showGame() {
-    this.currentPage = PAGES.GAME;
     this.appCdr.detectChanges();
   }
 

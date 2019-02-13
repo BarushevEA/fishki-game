@@ -24,4 +24,9 @@ export class WelcomePageComponent implements OnInit {
 
     return layers;
   }
+
+  onPlayerClick() {
+    this.gameService.isGameStarted = true;
+    this.gameService.showGame();
+  }
 }
