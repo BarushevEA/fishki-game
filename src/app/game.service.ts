@@ -66,14 +66,12 @@ export class GameService {
 
   incrementPlayerCounts() {
     this.playerCounts++;
-    this.appCdr.detectChanges();
     this.gameCdr.detectChanges();
     this.gameLoop();
   }
 
   incrementComputerCounts() {
     this.computerCounts++;
-    this.appCdr.detectChanges();
     this.gameCdr.detectChanges();
     this.gameLoop();
   }
@@ -99,7 +97,6 @@ export class GameService {
       setTimeout(computerStep.bind(this), this.delay);
     };
     setTimeout(go.bind(this), this.speedDelay);
-    this.gameCdr.detectChanges();
   }
 
   gameLoop() {
