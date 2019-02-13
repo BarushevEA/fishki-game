@@ -27,10 +27,6 @@ export class GameService {
     this.appCdr = CDR;
   }
 
-  setGameCdr(CDR: ChangeDetectorRef) {
-    this.gameCdr = CDR;
-  }
-
   start() {
     this.rectangles = [];
     this.playerCounts = 0;
@@ -66,13 +62,11 @@ export class GameService {
 
   incrementPlayerCounts() {
     this.playerCounts++;
-    this.gameCdr.detectChanges();
     this.gameLoop();
   }
 
   incrementComputerCounts() {
     this.computerCounts++;
-    this.gameCdr.detectChanges();
     this.gameLoop();
   }
 

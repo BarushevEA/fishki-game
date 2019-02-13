@@ -12,7 +12,6 @@ export class GamePageComponent implements OnInit {
 
   constructor(public CDR: ChangeDetectorRef,
               public gameService: GameService) {
-    gameService.setGameCdr(CDR);
   }
 
   ngOnInit() {
