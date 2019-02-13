@@ -50,6 +50,7 @@
     @include flexRowAlignCenter();
     text-align: center;
     justify-content: center;
+    padding-right: 10px;
     &:focus{
       outline: none !important;
     }

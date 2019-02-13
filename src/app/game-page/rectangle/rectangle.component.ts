@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import {GameService} from '../../game.service';
 
 @Component({
@@ -9,6 +9,8 @@ import {GameService} from '../../game.service';
 export class RectangleComponent implements OnInit {
   state = STATE;
   currentState: STATE;
+
+  @Input() rectangleNumber;
 
   constructor(public CDR: ChangeDetectorRef,
               public gameService: GameService) {

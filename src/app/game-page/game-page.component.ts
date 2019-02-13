@@ -17,12 +17,12 @@ export class GamePageComponent implements OnInit {
   ngOnInit() {
   }
 
-  initRectanglesArray() {
-    const rectangles = [];
+  initNumbersArray() {
+    const numbersOfRectangle = [];
     for (let i = 0; i < this.gameService.countOfRectangles; i++) {
-      rectangles.push('');
+      numbersOfRectangle.push(i + 1);
     }
-    return rectangles;
+    return numbersOfRectangle;
   }
 
   play(delay) {
