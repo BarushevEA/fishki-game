@@ -1,10 +1,11 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {GameService} from '../game.service';
 
 @Component({
   selector: 'app-game-page',
   templateUrl: './game-page.component.html',
-  styleUrls: ['./game-page.component.scss']
+  styleUrls: ['./game-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GamePageComponent implements OnInit {
   isPlayed = false;

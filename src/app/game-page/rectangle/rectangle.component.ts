@@ -1,10 +1,11 @@
-import {ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import {GameService} from '../../game.service';
 
 @Component({
   selector: 'app-rectangle',
   templateUrl: './rectangle.component.html',
-  styleUrls: ['./rectangle.component.scss']
+  styleUrls: ['./rectangle.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RectangleComponent implements OnInit {
   state = STATE;
