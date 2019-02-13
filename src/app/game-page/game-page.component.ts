@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {GameService} from '../game.service';
 
 @Component({
@@ -10,8 +10,7 @@ import {GameService} from '../game.service';
 export class GamePageComponent implements OnInit {
   isPlayed = false;
 
-  constructor(public CDR: ChangeDetectorRef,
-              public gameService: GameService) {
+  constructor(public gameService: GameService) {
   }
 
   ngOnInit() {
