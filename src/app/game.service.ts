@@ -73,7 +73,7 @@ export class GameService {
   goFreeRectangle() {
     let index = -1;
     while (index === -1) {
-      const count = Math.round(Math.random() * 101);
+      const count = Math.round(Math.random() * this.countOfRectangles);
       if (this.rectangles[count] && this.rectangles[count].currentState === this.rectangles[count].state.BLUE) {
         index = count;
       }
@@ -104,7 +104,5 @@ export class GameService {
 
 enum PAGES {
   WELCOME = 'WELCOME',
-  SETTINGS = 'SETTINGS',
-  GAME = 'GAME',
-  GOODBYE = 'GOODBYE'
+  GAME = 'GAME'
 }
